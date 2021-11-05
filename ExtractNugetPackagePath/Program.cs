@@ -22,7 +22,7 @@ namespace ExtractNugetPackagePath
             {
                 //https://stackoverflow.com/questions/19774155/returning-a-string-from-a-console-application
                 Console.Out.Write( match.Value);
-                Environment.SetEnvironmentVariable("NUGETPACKAGEPATH", match.Value);
+                //Environment.SetEnvironmentVariable("NUGETPACKAGEPATH", match.Value);
             }
             else
             {
