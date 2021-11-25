@@ -22,7 +22,10 @@ namespace ExtractNugetPackagePath
             {
                 //https://stackoverflow.com/questions/19774155/returning-a-string-from-a-console-application
                 Console.Out.Write( match.Value);
-                //Environment.SetEnvironmentVariable("NUGETPACKAGEPATH", match.Value);
+                //Environment.SetEnvironmentVariable("NUGETPACKAGEPATH", match.Value, EnvironmentVariableTarget.User);
+                File.WriteAllText("setnpp.bat", $@"SET NUGETPACKAGEPATH={match.Value}");
+                //workaround:
+                //https://stackoverflow.com/questions/924496/persist-an-environment-variables-after-app-exits
             }
             else
             {
