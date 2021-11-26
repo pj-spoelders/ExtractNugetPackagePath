@@ -24,6 +24,7 @@ namespace ExtractNugetPackagePath
                 Console.Out.Write( match.Value);
                 //Environment.SetEnvironmentVariable("NUGETPACKAGEPATH", match.Value, EnvironmentVariableTarget.User);
                 File.WriteAllText("setnpp.bat", $@"SET NUGETPACKAGEPATH={match.Value}");
+                File.WriteAllText("setnppps.ps1", $@"$env:NUGETPACKAGEPATH='{match.Value}'");
                 //workaround:
                 //https://stackoverflow.com/questions/924496/persist-an-environment-variables-after-app-exits
             }
